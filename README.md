@@ -6,7 +6,7 @@ OA-WinSeg is composed of three main blocks:
 2. Coarse window segmentation
 3. Window completion network
 
-![](images/OA-WinSeg-pipeline.png)
+![](images/images/OA-WinSeg-pipeline.PNG)
 *OA-WinSeg framework.*
 
 ## Dataset preparation
@@ -75,3 +75,22 @@ The code supports the following backbone included in the folder */networks*: Dee
 ## Resume training:
 - resume_ckpt: False or path of model to resume training
 - resume_ckpt_Discr: False or path of discriminator model to resume training
+
+## Experimental results
+
+### Occlusion detection on simmulated dataset
+The module is able to identify synthetic occlusions in *façade-occ* dataset, such as the examples presented in images (a) to (g); additionally, it shows some degree of generalization to real objects, as is the case of (real) vegetation in images (c) and (h).
+![](images/images/occ-sim.PNG)
+
+### Occlusion detection on real dataset
+Paris Art Deco dataset does not deliver occlusion annotations, therefore, we our trained model on *façade-occ* to run automatic occlusion detection on this evaluation dataset. 
+![](images/images/occ-real.PNG)
+
+### Window segmentation on simulated dataset
+Some results of our OA-WinSeg method on *façade-occ* dataset are shown, including dense and sparse occlusions, partially or fully occluding façade windows. Color-coded segments represent OA-WinSeg predictions, while red boundaries indicate ground truth.
+![](images/images/win-sim.PNG)
+
+### Window segmentation on simulated dataset
+Some results of OA-WinSeg in Paris Art Deco evaluation split are displayed in following figure, the samples mainly feature dense vegetation and small objects such as road signs, poles and cars. The images demonstrate the model’s ability to estimate occluded windows closely aligned with the ground truth.
+![](images/images/win-real.PNG)
+
