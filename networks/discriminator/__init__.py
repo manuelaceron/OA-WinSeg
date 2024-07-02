@@ -1,0 +1,1 @@
+from networks.discriminator.discriminator import NLayerDiscriminator
