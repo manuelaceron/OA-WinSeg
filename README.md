@@ -98,5 +98,5 @@ Some results of OA-WinSeg in Paris Art Deco evaluation split are displayed in fo
 
 ### Demo
 
-[![Video demo](images/demo.PNG)](images/vide-demo.mp4)
+![Gif demo](images/gif-video.gif)
 
