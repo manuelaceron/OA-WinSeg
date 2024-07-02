@@ -1,0 +1,77 @@
+batch_size: 1
+img_size: 512
+epoches: 100
+base_lr: 0.0001
+gpu_id: '0,1' 
+save_iter: 10
+num_workers: 0 
+val_visual: True
+image_driver: 'gdal'  
+color_table: 0,0,0,255,255,255,0,255,0,0,0,255
+num_class: 1  
+thread: 0.5
+input_bands: 3
+
+loss_type: 'bce_log' 
+loss_weight: 0.60048239, 2.98799814
+
+#loss weight 
+#full-occ60: 0.60048239, 2.98799814
+#modern-occ100: 0.7031397, 1.73068019
+#ecp-occ60: 0.63147511, 2.40150057
+
+bk_pretrained: None
+pretrained_model: None 
+fine-tune-DL: False
+
+resume_ckpt: False #/home/cero_ma/MCV/code220419_windows/0401_files/UNet_full-occ60/pth_UNet/110valiou_best.pth
+resume_ckpt_Discr: False #"/home/cero_ma/MCV/code220419_windows/0401_files/DFV2_full-occ60/pth_DFV2/D_70valiou_best.pth"
+
+# Completion network
+use-occ-model: True
+use-coarse-model: True
+adversarial: True
+1D_kernel: 7
+corner_reg : True
+
+
+model_name: DFV2 
+model_experision: full-modern-occ80
+dataset: full_modern_occ80 #full-occ60 # #artdeco_ref  #full-occ60 # #new_inference # #inference_facades # #modern-occ100 #artdeco_ref #ecp_2class_full 
+
+
+# Fixed occlusion models
+ecp_occ_model: '/home/cero_ma/MCV/code220419_windows/0401_files/occ: SegFormer/SegFormer_ecp_occ_b2_loss_aug_lr0_00006_preCityS/250valiou_best.pth'
+full_occ60_occ_model: "/home/cero_ma/MCV/code220419_windows/0401_files/SegFormer_full-occ60-noNorm/50valiou_best.pth"
+full_modern_occ80_occ_model: "/home/cero_ma/MCV/code220419_windows/0401_files/SegFormer_full-moden-occ80_augTrans/20valiou_best.pth"
+
+# Coarse segmentation models
+ecp_coarse_model: '/home/cero_ma/MCV/code220419_windows/0401_files/Res_UNet_50_ecp_new/pth_Res_UNet_50/30valiou_best.pth'
+full_occ60_coarse_model: "/home/cero_ma/MCV/code220419_windows/0401_files/Res_UNet_50_full-occ60_log/pth_Res_UNet_50/60valiou_best.pth"
+artdeco_ori_coarse_model: "/home/cero_ma/MCV/code220419_windows/0401_files/Res_UNet_50_artdeco-complete/pth_Res_UNet_50/150valiou_best.pth"
+artdeco_ref_coarse_model: "/home/cero_ma/MCV/code220419_windows/0401_files/Res_UNet_50_artdeco_refined/pth_Res_UNet_50/70valiou_best.pth"
+modern_coarse_model: "/home/cero_ma/MCV/code220419_windows/0401_files/Res_UNet_101_modern/pth_Res_UNet_101/50valiou_best.pth"
+full_occ100_coarse_model: "/home/cero_ma/MCV/code220419_windows/0401_files/Res_UNet_101_full-occ100/pth_Res_UNet_101/60valiou_best.pth"
+full_occ80_coarse_model: "/home/cero_ma/MCV/code220419_windows/0401_files/Res_UNet_101_full-occ80/pth_Res_UNet_101/60valiou_best.pth"
+full_modern_occ80_coarse_model: "/home/cero_ma/MCV/code220419_windows/0401_files/Res_UNet_101_full-modern-occ80/pth_Res_UNet_101/110valiou_best.pth"
+
+test: "/home/cero_ma/MCV/code220419_windows/0401_files/UNet_full-occ60/pth_UNet/res_20valiou_best.pth"
+
+# Corner regresor
+corner_reg_model: "/home/cero_ma/MCV/code220419_windows/0401_files/corner_reg_full-modern-occ80_test/pth_corner_reg/60valiou_best.pth"
+
+#Inference
+main_model_inference: 40valiou_best.pth
+
+#data path
+root_path: '/home/cero_ma/MCV/code220419_windows'
+data_name: 'data'
+exp_name: '0401'
+
+pred_path: 'delete'
+model_dir: 'model_result'
+jsonAnnotation: "json_coco"
+
+stop_pat: 100
+stop_delta: 0.01
+

@@ -1,0 +1,31 @@
+batch_size: 6
+img_size: 512 
+epoches: 300 
+base_lr: 0.00006
+gpu_id: '2,3' 
+save_iter: 10
+num_class: 1 
+input_bands: 3
+        
+pretrained_model: nvidia/segformer-b2-finetuned-cityscapes-1024-1024
+root_dir: /home/cero_ma/MCV/window_benchmarks/originals/split_data/full_modern_occ80  
+checkpoint_inference: "/home/cero_ma/MCV/code220419_windows/0401_files/SegFormer_full-moden-occ80_augTrans/20valiou_best.pth" 
+
+
+model_name: SegFormer
+model_experision: full-moden-occ80_augTrans
+mode: test
+
+
+#data path
+root_path: '/home/cero_ma/MCV/code220419_windows'
+data_name: 'data'
+exp_name: '0401'
+
+pred_path: 'test_result' 
+model_dir: 'model_result'
+
+stop_pat: 100
+stop_delta: 0.01
+
+
