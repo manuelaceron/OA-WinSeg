@@ -93,5 +93,6 @@ Some results of our OA-WinSeg method on *façade-occ* dataset are shown, includi
 
 ### Window segmentation on real dataset
 Some results of OA-WinSeg in Paris Art Deco evaluation split are displayed in following figure, the samples mainly feature dense vegetation and small objects such as road signs, poles and cars. The images demonstrate the model’s ability to estimate occluded windows closely aligned with the ground truth.
+
 ![](images/win-real.PNG)
 
