@@ -77,8 +77,9 @@ The code supports the following backbone included in the folder */networks*: Dee
 - resume_ckpt_Discr: False or path of discriminator model to resume training
 
 ## Experimental results
+For the experimental results, both dataset with simulated [*façade-occ*](https://github.com/manuelaceron/occ-data-generation) and real occlusions [*Paris Art Deco*](https://github.com/raghudeep/ParisArtDecoFacadesDataset) were tested.
 
-### Occlusion detection on simmulated dataset
+### Occlusion detection on simulated dataset
 The module is able to identify synthetic occlusions in *façade-occ* dataset, such as the examples presented in images (a) to (g); additionally, it shows some degree of generalization to real objects, as is the case of (real) vegetation in images (c) and (h).
 ![](images/occ-sim.PNG)
 
@@ -90,7 +91,7 @@ Paris Art Deco dataset does not deliver occlusion annotations, therefore, we our
 Some results of our OA-WinSeg method on *façade-occ* dataset are shown, including dense and sparse occlusions, partially or fully occluding façade windows. Color-coded segments represent OA-WinSeg predictions, while red boundaries indicate ground truth.
 ![](images/win-sim.PNG)
 
-### Window segmentation on simulated dataset
+### Window segmentation on real dataset
 Some results of OA-WinSeg in Paris Art Deco evaluation split are displayed in following figure, the samples mainly feature dense vegetation and small objects such as road signs, poles and cars. The images demonstrate the model’s ability to estimate occluded windows closely aligned with the ground truth.
 ![](images/win-real.PNG)
 
